@@ -1,60 +1,63 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from "react";
+import { Platform } from "react-native";
+import {
+  createStackNavigator,
+  createBottomTabNavigator
+} from "react-navigation";
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import TabBarIcon from "../components/TabBarIcon";
+import PostsScreen from "../screens/PostsScreen";
+import AlbumsScreen from "../screens/AlbumsScreen";
+import ToDosScreen from "../screens/ToDosScreen";
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const PostStack = createStackNavigator({
+  Posts: PostsScreen
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+PostStack.navigationOptions = {
+  tabBarLabel: "Posts",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-chatboxes" : "md-chatboxes"}
+    />
+  )
+};
+
+const AlbumsStack = createStackNavigator({
+  Albums: AlbumsScreen
+});
+
+AlbumsStack.navigationOptions = {
+  tabBarLabel: "Albums",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-albums" : "md-albums"}
+    />
+  )
+};
+
+const ToDosStack = createStackNavigator({
+  ToDos: ToDosScreen
+});
+
+ToDosStack.navigationOptions = {
+  tabBarLabel: "To Do's",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+        Platform.OS === "ios"
+          ? `ios-list${focused ? "-box" : ""}`
+          : `md-list${focused ? "-box" : ""}`
       }
     />
-  ),
-};
-
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
-});
-
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
-  ),
-};
-
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
+  )
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  PostStack,
+  AlbumsStack,
+  ToDosStack
 });

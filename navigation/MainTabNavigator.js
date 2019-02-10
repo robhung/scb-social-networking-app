@@ -1,20 +1,21 @@
 import React from "react";
 import { Platform } from "react-native";
 import {
-  createStackNavigator,
-  createBottomTabNavigator
+  createBottomTabNavigator,
+  createStackNavigator
 } from "react-navigation";
 
 import TabBarIcon from "../components/TabBarIcon";
+
 import PostsScreen from "../screens/PostsScreen";
 import AlbumsScreen from "../screens/AlbumsScreen";
 import ToDosScreen from "../screens/ToDosScreen";
 
-const PostStack = createStackNavigator({
+const PostsStack = createStackNavigator({
   Posts: PostsScreen
 });
 
-PostStack.navigationOptions = {
+PostsStack.navigationOptions = {
   tabBarLabel: "Posts",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -41,7 +42,6 @@ AlbumsStack.navigationOptions = {
 const ToDosStack = createStackNavigator({
   ToDos: ToDosScreen
 });
-
 ToDosStack.navigationOptions = {
   tabBarLabel: "To Do's",
   tabBarIcon: ({ focused }) => (
@@ -56,8 +56,10 @@ ToDosStack.navigationOptions = {
   )
 };
 
-export default createBottomTabNavigator({
-  PostStack,
+const MainTabNavigator = createBottomTabNavigator({
+  PostsStack,
   AlbumsStack,
   ToDosStack
 });
+
+export default MainTabNavigator;

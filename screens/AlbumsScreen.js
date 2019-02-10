@@ -1,10 +1,19 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
+import React from "react";
+import { Button, ScrollView, StyleSheet } from "react-native";
+import { ExpoLinksView } from "@expo/samples";
 
 export default class AlbumsScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Albums',
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "User 1",
+      headerLeft: (
+        <Button
+          onPress={() => navigation.navigate("User")}
+          title="Users"
+          color="#000"
+        />
+      )
+    };
   };
 
   render() {
@@ -22,6 +31,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 15,
-    backgroundColor: '#fff',
-  },
+    backgroundColor: "#fff"
+  }
 });

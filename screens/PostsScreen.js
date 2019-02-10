@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Button,
   Image,
   Platform,
   ScrollView,
@@ -13,8 +14,17 @@ import { WebBrowser } from "expo";
 import { MonoText } from "../components/StyledText";
 
 export default class PostsScreen extends React.Component {
-  static navigationOptions = {
-    header: null
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "User 1",
+      headerLeft: (
+        <Button
+          onPress={() => navigation.navigate("User")}
+          title="Users"
+          color="#000"
+        />
+      )
+    };
   };
 
   render() {

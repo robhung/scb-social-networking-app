@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "SCB Book",
-    "slug": "SCB-social-networking-app",
+    "slug": "scb-social-networking-app",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Task from SCB to develop a social networking app",
+    "githubUrl": "https://github.com/robhung/scb-social-networking-app"
   }
 }

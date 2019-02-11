@@ -23,7 +23,7 @@ const handlers = {
         updateState({ ...state, loading: false, error });
       });
   },
-  onUser: ({ navigation }) => userId => navigation.navigate("Main", { userId })
+  onUser: ({ navigation }) => user => navigation.navigate("Main", { user })
 };
 
 const UsersScreenContainer = compose(

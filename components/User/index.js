@@ -5,14 +5,14 @@ import { Icon } from "expo";
 
 import { PRIMARY } from "../../constants/Colors";
 
-const User = ({ name, onUser }) => (
-  <TouchableOpacity style={styles.wrapper} onPress={onUser}>
+const User = ({ user, onUser }) => (
+  <TouchableOpacity style={styles.wrapper} onPress={() => onUser(user)}>
     <Icon.Ionicons
       name={Platform.OS === "ios" ? "ios-contact" : "md-contact"}
       size={64}
       color={PRIMARY}
     />
-    <Text>{name}</Text>
+    <Text>{user.name}</Text>
   </TouchableOpacity>
 );
 
@@ -28,8 +28,11 @@ const styles = StyleSheet.create({
 });
 
 User.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
+  user: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.object
+  ]).isRequired,
   onUser: PropTypes.func.isRequired
 };
 

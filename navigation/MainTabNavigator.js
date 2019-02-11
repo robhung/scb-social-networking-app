@@ -5,15 +5,26 @@ import {
   createStackNavigator
 } from "react-navigation";
 
+import HeaderUsers from "../components/HeaderUsers";
 import TabBarIcon from "../components/TabBarIcon";
 
 import PostsScreen from "../screens/PostsScreen";
 import AlbumsScreen from "../screens/AlbumsScreen";
 import ToDosScreen from "../screens/ToDosScreen";
 
-const PostsStack = createStackNavigator({
-  Posts: PostsScreen
-});
+const PostsStack = createStackNavigator(
+  {
+    Posts: PostsScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        title: navigation.getParam("user", { name: "No User Found" }).name,
+        headerRight: <HeaderUsers navigation={navigation} />
+      };
+    }
+  }
+);
 
 PostsStack.navigationOptions = {
   tabBarLabel: "Posts",
@@ -25,9 +36,19 @@ PostsStack.navigationOptions = {
   )
 };
 
-const AlbumsStack = createStackNavigator({
-  Albums: AlbumsScreen
-});
+const AlbumsStack = createStackNavigator(
+  {
+    Albums: AlbumsScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        title: navigation.getParam("user", { name: "No User Found" }).name,
+        headerRight: <HeaderUsers navigation={navigation} />
+      };
+    }
+  }
+);
 
 AlbumsStack.navigationOptions = {
   tabBarLabel: "Albums",
@@ -39,9 +60,20 @@ AlbumsStack.navigationOptions = {
   )
 };
 
-const ToDosStack = createStackNavigator({
-  ToDos: ToDosScreen
-});
+const ToDosStack = createStackNavigator(
+  {
+    ToDos: ToDosScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        title: navigation.getParam("user", { name: "No User Found" }).name,
+        headerRight: <HeaderUsers navigation={navigation} />
+      };
+    }
+  }
+);
+
 ToDosStack.navigationOptions = {
   tabBarLabel: "To Do's",
   tabBarIcon: ({ focused }) => (

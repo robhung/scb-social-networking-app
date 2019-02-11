@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FlatList, StyleSheet, Text, View } from "react-native";
+import { Button, FlatList, StyleSheet, View } from "react-native";
 
 import UsersScreenContainer from "../../containers/UsersScreenContainer";
 
@@ -47,10 +47,6 @@ const styles = StyleSheet.create({
   usersContent: {
     alignItems: "center",
     paddingVertical: 12
-  },
-  user: {
-    height: 50,
-    borderWidth: 1
   }
 });
 

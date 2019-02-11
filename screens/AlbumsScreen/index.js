@@ -3,19 +3,6 @@ import { Button, ScrollView, StyleSheet } from "react-native";
 import { ExpoLinksView } from "@expo/samples";
 
 export default class AlbumsScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title: "User 1",
-      headerLeft: (
-        <Button
-          onPress={() => navigation.navigate("User")}
-          title="Users"
-          color="#000"
-        />
-      )
-    };
-  };
-
   render() {
     return (
       <ScrollView style={styles.container}>

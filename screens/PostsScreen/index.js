@@ -14,19 +14,6 @@ import { WebBrowser } from "expo";
 import { MonoText } from "../../components/StyledText";
 
 export default class PostsScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title: "User 1",
-      headerLeft: (
-        <Button
-          onPress={() => navigation.navigate("User")}
-          title="Users"
-          color="#000"
-        />
-      )
-    };
-  };
-
   render() {
     return (
       <View style={styles.container}>

@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   usersWrapper: {},
   usersContent: {
     alignItems: "center",
-    paddingTop: 12
+    paddingVertical: 12
   },
   user: {
     height: 50,

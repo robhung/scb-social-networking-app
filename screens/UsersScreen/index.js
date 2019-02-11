@@ -13,13 +13,13 @@ const UsersScreen = ({ onFetch, onUser, state }) => (
       if (state.loading) return <Loading flex={1} />;
       if (state.error)
         return (
-          <React.Fragment>
+          <View style={styles.errorWrapper}>
             <ErrorMessage
-              containerStyle={styles.errorWrapper}
-              text="Unable to retrieve User data."
+              textStyle={styles.errorText}
+              text="Unable to retrieve Users, please refetch."
             />
             <Button onPress={onFetch} title="Refetch" color="#000" />
-          </React.Fragment>
+          </View>
         );
 
       return (
@@ -47,6 +47,14 @@ const styles = StyleSheet.create({
   usersContent: {
     alignItems: "center",
     paddingVertical: 12
+  },
+  errorWrapper: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  errorText: {
+    fontSize: 18
   }
 });
 

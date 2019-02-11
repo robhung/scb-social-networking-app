@@ -28,11 +28,9 @@ const styles = StyleSheet.create({
 });
 
 User.propTypes = {
-  user: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-    PropTypes.object
-  ]).isRequired,
+  user: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.object])
+  ).isRequired,
   onUser: PropTypes.func.isRequired
 };
 

@@ -1,4 +1,7 @@
 import { compose, lifecycle, withState, withHandlers } from "recompose";
+import { connect } from "react-redux";
+
+import { userSelected } from "../../data/redux/actions/user";
 
 const initialState = {
   loading: true,
@@ -23,10 +26,14 @@ const handlers = {
         updateState({ ...state, loading: false, error });
       });
   },
-  onUser: ({ navigation }) => user => navigation.navigate("Posts", { user })
+  onUser: ({ dispatch, navigation }) => user => {
+    dispatch(userSelected(user));
+    navigation.navigate("Main");
+  }
 };
 
 const UsersScreenContainer = compose(
+  connect(),
   withState("state", "updateState", initialState),
   withHandlers(handlers),
   lifecycle({

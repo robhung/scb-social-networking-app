@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Icon } from "expo";
 
-import { PRIMARY } from "../../constants/Colors";
 import { widthPercentageToDP as wp } from "../../utils/responsive";
 
 const PhotoThumb = ({ columns, photo, onPhotoThumb }) => {

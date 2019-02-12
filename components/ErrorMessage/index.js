@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 
-import { ERROR_TEXT } from "../../constants/Colors";
+import Colors from "../../constants/Colors";
 
 const ErrorMessage = ({ containerStyle, textStyle, text }) => {
   let newText = text;
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     fontSize: 14,
-    color: ERROR_TEXT
+    color: Colors.ERROR_TEXT
   }
 });
 

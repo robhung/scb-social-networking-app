@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
-import { PRIMARY } from "../../constants/Colors";
+import Colors from "../../constants/Colors";
 
 const Loading = ({ color, flex, height, overlay, size, style }) => {
   const styles = StyleSheet.create({
@@ -29,7 +29,10 @@ const Loading = ({ color, flex, height, overlay, size, style }) => {
 
   return (
     <View style={overlay ? styles.overlay : [styles.loading, style]}>
-      <ActivityIndicator color={color || PRIMARY} size={size || "large"} />
+      <ActivityIndicator
+        color={color || Colors.PRIMARY}
+        size={size || "large"}
+      />
     </View>
   );
 };

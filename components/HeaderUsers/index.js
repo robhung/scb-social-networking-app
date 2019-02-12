@@ -3,7 +3,7 @@ import { Platform, StyleSheet, TouchableOpacity } from "react-native";
 import { Icon } from "expo";
 import PropTypes from "prop-types";
 
-import { PRIMARY } from "../../constants/Colors";
+import Colors from "../../constants/Colors";
 
 const HeaderUsers = ({ navigation }) => (
   <TouchableOpacity
@@ -13,7 +13,7 @@ const HeaderUsers = ({ navigation }) => (
     <Icon.Ionicons
       name={Platform.OS === "ios" ? "ios-contact" : "md-contact"}
       size={32}
-      color={PRIMARY}
+      color={Colors.PRIMARY}
     />
   </TouchableOpacity>
 );

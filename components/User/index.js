@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import { Platform, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Icon } from "expo";
 
-import { PRIMARY } from "../../constants/Colors";
+import Colors from "../../constants/Colors";
 
 const User = ({ user, onUser }) => (
   <TouchableOpacity style={styles.wrapper} onPress={() => onUser(user)}>
     <Icon.Ionicons
       name={Platform.OS === "ios" ? "ios-contact" : "md-contact"}
       size={64}
-      color={PRIMARY}
+      color={Colors.PRIMARY}
     />
     <Text>{user.name}</Text>
   </TouchableOpacity>

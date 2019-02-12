@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, FlatList, StyleSheet, View } from "react-native";
+import PropTypes from "prop-types";
 
 import AlbumPhotosScreenContainer from "../../containers/AlbumPhotosScreenContainer";
 
@@ -57,5 +58,16 @@ const styles = StyleSheet.create({
     fontSize: 18
   }
 });
+
+AlbumPhotosScreen.propTypes = {
+  columns: PropTypes.number.isRequired,
+  onFetch: PropTypes.func.isRequired,
+  onPhotoThumb: PropTypes.func.isRequired,
+  state: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    photos: PropTypes.array
+  }).isRequired
+};
 
 export default AlbumPhotosScreenContainer(AlbumPhotosScreen);

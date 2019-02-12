@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, FlatList, StyleSheet, View } from "react-native";
+import PropTypes from "prop-types";
 
 import PostCommentsScreenContainer from "../../containers/PostCommentsScreenContainer";
 
@@ -57,5 +58,15 @@ const styles = StyleSheet.create({
     fontSize: 18
   }
 });
+
+PostCommentsScreen.propTypes = {
+  onComment: PropTypes.func.isRequired,
+  onFetch: PropTypes.func.isRequired,
+  state: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    comments: PropTypes.array
+  }).isRequired
+};
 
 export default PostCommentsScreenContainer(PostCommentsScreen);

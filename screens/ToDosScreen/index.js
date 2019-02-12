@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, FlatList, StyleSheet, View } from "react-native";
+import PropTypes from "prop-types";
 
 import ToDosScreenContainer from "../../containers/ToDosScreenContainer";
 
@@ -52,5 +53,14 @@ const styles = StyleSheet.create({
     fontSize: 18
   }
 });
+
+ToDosScreen.propTypes = {
+  onFetch: PropTypes.func.isRequired,
+  state: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    todos: PropTypes.array
+  }).isRequired
+};
 
 export default ToDosScreenContainer(ToDosScreen);

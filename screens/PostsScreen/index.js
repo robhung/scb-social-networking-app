@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, FlatList, StyleSheet, View } from "react-native";
+import PropTypes from "prop-types";
 
 import PostsScreenContainer from "../../containers/PostsScreenContainer";
 
@@ -52,5 +53,15 @@ const styles = StyleSheet.create({
     fontSize: 18
   }
 });
+
+PostsScreen.propTypes = {
+  onFetch: PropTypes.func.isRequired,
+  onPost: PropTypes.func.isRequired,
+  state: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    posts: PropTypes.array
+  }).isRequired
+};
 
 export default PostsScreenContainer(PostsScreen);

@@ -10,7 +10,7 @@ You will need to download the Expo Client on [iOS](https://itunes.apple.com/app/
 
 On Android, you can simply scan the QR code or manually type the link / search for the project within the app.
 
-On iOS, you will need to click on this link (exp://exp.host/@robhung/scb-social-networking-app) for the project to open as Apple have prevented the use of QR code scanning for their app. Easiest way would be to just type out the link, copy / paste / send to yourself or visit this repo on your device.
+On iOS, you will need to click [here](exp://exp.host/@robhung/scb-social-networking-app) for the project to open as Apple have prevented the use of QR code scanning for their app. Easiest way would be to just type out the link, copy / paste / send to yourself or visit this repo on your device.
 
 ## Run Development or Production via Local Machine
 

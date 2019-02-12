@@ -1,8 +1,6 @@
 import { compose, lifecycle, withState, withHandlers } from "recompose";
 import { connect } from "react-redux";
 
-// import { userSelected } from "../../data/redux/actions/user";
-
 const initialState = {
   loading: true,
   error: false,
@@ -26,9 +24,8 @@ const handlers = {
         updateState({ ...state, loading: false, error });
       });
   },
-  onAlbum: ({ dispatch, navigation }) => post => {
-    // dispatch(userSelected(user));
-    navigation.navigate("PostComments", { post });
+  onAlbum: ({ navigation }) => album => {
+    navigation.navigate("AlbumPhotos", { album });
   }
 };
 

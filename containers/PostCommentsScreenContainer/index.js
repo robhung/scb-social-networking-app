@@ -5,7 +5,6 @@ import {
   withProps,
   withState
 } from "recompose";
-import { connect } from "react-redux";
 
 const initialState = {
   loading: true,
@@ -35,7 +34,6 @@ const handlers = {
 };
 
 const PostCommentsScreenContainer = compose(
-  connect(({ user }) => ({ user })),
   withState("state", "updateState", initialState),
   withProps(({ navigation }) => ({
     post: navigation.getParam("post", {})

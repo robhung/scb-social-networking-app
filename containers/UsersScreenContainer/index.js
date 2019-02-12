@@ -45,7 +45,7 @@ const UsersScreenContainer = compose(
   connect(),
   withState("state", "updateState", initialState),
   withProps(() => ({
-    columns: Math.round(wp(100) / 164)
+    columns: Math.round(wp(100) / 172)
   })),
   withHandlers(handlers),
   lifecycle({

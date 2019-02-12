@@ -13,7 +13,9 @@ import { widthPercentageToDP as wp } from "../../utils/responsive";
 const initialState = {
   loading: true,
   error: false,
-  photos: []
+  index: 0,
+  photos: [],
+  showModal: false
 };
 
 const handlers = {
@@ -33,9 +35,10 @@ const handlers = {
         updateState({ ...state, loading: false, error: `${error}` });
       });
   },
-  onPhotoThumb: ({ navigation }) => album => {
-    // navigation.navigate("PostComments", { album });
-  }
+  onPhotoThumb: ({ state, updateState }) => index =>
+    updateState({ ...state, index, showModal: true }),
+  onToggleModal: ({ state, updateState }) => () =>
+    updateState({ ...state, showModal: !state.showModal })
 };
 
 const AlbumPhotosScreenContainer = compose(

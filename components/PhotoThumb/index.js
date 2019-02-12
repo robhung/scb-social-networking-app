@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
-import { Icon } from "expo";
 
 import { widthPercentageToDP as wp } from "../../utils/responsive";
 
@@ -14,7 +13,7 @@ const PhotoThumb = ({ columns, photo, onPhotoThumb }) => {
   });
 
   return (
-    <TouchableOpacity onPress={() => onPhotoThumb(photo)}>
+    <TouchableOpacity onPress={onPhotoThumb}>
       <Image style={styles.image} source={{ uri: photo.thumbnailUrl }} />
     </TouchableOpacity>
   );

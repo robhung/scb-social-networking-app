@@ -1,15 +1,35 @@
 const tintColor = "#2f95dc";
 
 export default {
+  BACKGROUND: "#F5F5F5",
+  BLACK: "#333333",
   ERROR_BACKGROUND: "red",
-  ERROR_TEXT: "#fff",
+  ERROR_TEXT: "#f44336",
+  GREY_50: "#fafafa",
+  GREY_100: "#f5f5f5",
+  GREY_200: "#eeeeee",
+  GREY_300: "#e0e0e0",
+  GREY_400: "#bdbdbd",
+  GREY_500: "#9e9e9e",
+  GREY_600: "#757575",
+  GREY_700: "#616161",
+  GREY_800: "#424242",
+  GREY_900: "#212121",
+  GREY_A100: "#d5d5d5",
+  GREY_A200: "#aaaaaa",
+  GREY_A400: "#303030",
+  GREY_A700: "616161",
   NOTICE_BACKGROUND: tintColor,
   NOTICE_TEXT: "#fff",
-  PRIMARY: "#000",
+  PRIMARY: "#233d4d",
+  SECONDARY: "#ff577b",
+  SECONDARY_BLACK: "gray",
+  MINOR_BLACK: "lightgray",
   TAB_ICON_DEFAULT: "#ccc",
   TAB_ICON_SELECTED: tintColor,
   TAB_BAR: "#fefefe",
   TINT_COLOR: tintColor,
   WARNING_BACKGROUND: "#EAEB5E",
-  WARNING_TEXT: "#666804"
+  WARNING_TEXT: "#666804",
+  WHITE: "white"
 };

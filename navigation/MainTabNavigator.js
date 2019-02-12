@@ -8,10 +8,11 @@ import {
 import HeaderUsers from "../components/HeaderUsers";
 import TabBarIcon from "../components/TabBarIcon";
 
-import PostsScreen from "../screens/PostsScreen";
+import AlbumPhotosScreen from "../screens/AlbumPhotosScreen";
 import AlbumsScreen from "../screens/AlbumsScreen";
-import ToDosScreen from "../screens/ToDosScreen";
 import PostCommentsScreen from "../screens/PostCommentsScreen";
+import PostsScreen from "../screens/PostsScreen";
+import ToDosScreen from "../screens/ToDosScreen";
 
 const PostsStack = createStackNavigator(
   {
@@ -45,7 +46,13 @@ PostsStack.navigationOptions = {
 
 const AlbumsStack = createStackNavigator(
   {
-    Albums: AlbumsScreen
+    Albums: AlbumsScreen,
+    AlbumPhotos: {
+      screen: AlbumPhotosScreen,
+      navigationOptions: {
+        title: "Album"
+      }
+    }
   },
   {
     defaultNavigationOptions: ({ navigation }) => {

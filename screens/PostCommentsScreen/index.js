@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
 });
 
 PostCommentsScreen.propTypes = {
-  onComment: PropTypes.func.isRequired,
   onFetch: PropTypes.func.isRequired,
   state: PropTypes.shape({
     loading: PropTypes.bool,

@@ -1,24 +1,32 @@
 # SCB Book - Social Network App
 
-## Made using React-Native & Expo CLI
+You can choose to run the app via Expo or Local Machine, either works well.
 
-See the [React-Native README](https://github.com/facebook/react-native/blob/master/README.md).
+## Run Production via Expo
 
-See the [Expo-CLI README](https://github.com/expo/expo-cli/blob/master/README.md).
+The project has been published and hosted on [Expo](https://expo.io/@robhung/scb-social-networking-app).
 
-You can install Expo CLI by running:
+You will need to download the Expo Client on [iOS](https://itunes.apple.com/app/apple-store/id982107779) or [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www).
+
+On Android, you can simply scan the QR code or manually type the link / search for the project within the app.
+
+On iOS, you will need to click on this link (exp://exp.host/@robhung/scb-social-networking-app) for the project to open as Apple have prevented the use of QR code scanning for their app. Easiest way would be to just type out the link, copy / paste / send to yourself or visit this repo on your device.
+
+## Run Development or Production via Local Machine
+
+### Install Expo CLI
 
 ```bash
 npm install -g expo-cli
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-## Run
+### Run
 
 ```bash
 npm start
@@ -37,3 +45,9 @@ Tests can be run with:
 ```bash
 npm test
 ```
+
+## Made using React-Native & Expo CLI
+
+See the [React-Native README](https://github.com/facebook/react-native/blob/master/README.md).
+
+See the [Expo-CLI README](https://github.com/expo/expo-cli/blob/master/README.md).

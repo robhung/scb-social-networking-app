@@ -1,7 +1,7 @@
 import { compose, lifecycle, withState, withHandlers } from "recompose";
 import { connect } from "react-redux";
 
-// import { userSelected } from "../../data/redux/actions/user";
+import { API_URL } from "../../data";
 
 const initialState = {
   loading: true,
@@ -13,7 +13,7 @@ const handlers = {
   onFetch: ({ state, updateState, user }) => async () => {
     updateState({ ...state, loading: true });
 
-    await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`)
+    await fetch(`${API_URL}/posts?userId=${user.id}`)
       .then(response => response.json())
       .then(responseJson => {
         updateState({

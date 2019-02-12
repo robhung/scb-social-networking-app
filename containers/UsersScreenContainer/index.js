@@ -7,6 +7,7 @@ import {
 } from "recompose";
 import { connect } from "react-redux";
 
+import { API_URL } from "../../data";
 import { userSelected } from "../../data/redux/actions/user";
 
 import { widthPercentageToDP as wp } from "../../utils/responsive";
@@ -21,7 +22,7 @@ const handlers = {
   onFetch: ({ state, updateState }) => async () => {
     updateState({ ...state, loading: true });
 
-    await fetch("https://jsonplaceholder.typicode.com/users")
+    await fetch(`${API_URL}/users`)
       .then(response => response.json())
       .then(responseJson => {
         updateState({

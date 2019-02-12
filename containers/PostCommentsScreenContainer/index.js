@@ -6,6 +6,8 @@ import {
   withState
 } from "recompose";
 
+import { API_URL } from "../../data";
+
 const initialState = {
   loading: true,
   error: false,
@@ -16,9 +18,7 @@ const handlers = {
   onFetch: ({ state, updateState, post }) => async () => {
     updateState({ ...state, loading: true });
 
-    await fetch(
-      `https://jsonplaceholder.typicode.com/comments?postId=${post.id}`
-    )
+    await fetch(`${API_URL}/comments?postId=${post.id}`)
       .then(response => response.json())
       .then(responseJson => {
         updateState({

@@ -6,6 +6,8 @@ import {
   withState
 } from "recompose";
 
+import { API_URL } from "../../data";
+
 import { widthPercentageToDP as wp } from "../../utils/responsive";
 
 const initialState = {
@@ -18,9 +20,7 @@ const handlers = {
   onFetch: ({ state, updateState, album }) => async () => {
     updateState({ ...state, loading: true });
 
-    await fetch(
-      `https://jsonplaceholder.typicode.com/photos?albumId=${album.id}`
-    )
+    await fetch(`${API_URL}/photos?albumId=${album.id}`)
       .then(response => response.json())
       .then(responseJson => {
         updateState({

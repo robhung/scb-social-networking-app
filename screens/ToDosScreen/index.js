@@ -8,7 +8,7 @@ import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 import ToDo from "../../components/ToDo";
 
-const ToDosScreen = ({ onFetch, state }) => (
+const ToDosScreen = ({ onFetch, onToggleCompleted, state }) => (
   <View style={styles.wrapper}>
     {(() => {
       if (state.loading) return <Loading flex={1} />;
@@ -24,7 +24,14 @@ const ToDosScreen = ({ onFetch, state }) => (
         <FlatList
           style={styles.postsWrapper}
           contentContainerStyle={styles.postsContent}
-          data={state.todos}
+          data={state.showCompleted ? state.todos : state.todosIncomplete}
+          ListFooterComponent={
+            <Button
+              style={styles.toggleCompletedButton}
+              title={state.showCompleted ? "Hide Completed" : "Show Completed"}
+              onPress={onToggleCompleted}
+            />
+          }
           showsVerticalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
           onRefresh={() => onFetch()}
@@ -41,9 +48,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   postsWrapper: {},
-  postsContent: {
-    paddingVertical: 12
-  },
+  postsContent: {},
   errorWrapper: {
     flex: 1,
     justifyContent: "center",
@@ -51,15 +56,18 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: 18
-  }
+  },
+  toggleCompletedButton: {}
 });
 
 ToDosScreen.propTypes = {
   onFetch: PropTypes.func.isRequired,
+  onToggleCompleted: PropTypes.func.isRequired,
   state: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-    todos: PropTypes.array
+    todos: PropTypes.array,
+    todosIncomplete: PropTypes.array
   }).isRequired
 };
 

@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 const initialState = {
   loading: true,
   error: false,
-  todos: []
+  todos: [],
+  showCompleted: false
 };
 
 const handlers = {
@@ -17,13 +18,16 @@ const handlers = {
         updateState({
           ...state,
           loading: false,
-          todos: responseJson
+          todos: responseJson,
+          todosIncomplete: responseJson.filter(todo => !todo.completed)
         });
       })
       .catch(error => {
         updateState({ ...state, loading: false, error: `${error}` });
       });
-  }
+  },
+  onToggleCompleted: ({ state, updateState }) => () =>
+    updateState({ ...state, showCompleted: !state.showCompleted })
 };
 
 const ToDosScreenContainer = compose(

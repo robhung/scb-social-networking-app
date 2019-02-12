@@ -11,15 +11,22 @@ import TabBarIcon from "../components/TabBarIcon";
 import PostsScreen from "../screens/PostsScreen";
 import AlbumsScreen from "../screens/AlbumsScreen";
 import ToDosScreen from "../screens/ToDosScreen";
+import PostCommentsScreen from "../screens/PostCommentsScreen";
 
 const PostsStack = createStackNavigator(
   {
-    Posts: PostsScreen
+    Posts: PostsScreen,
+    PostComments: {
+      screen: PostCommentsScreen,
+      navigationOptions: {
+        title: "Post"
+      }
+    }
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
       return {
-        title: navigation.getParam("user", { name: "No User Found" }).name,
+        title: navigation.getParam("user", { name: "SCB Book" }).name,
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }
@@ -43,7 +50,7 @@ const AlbumsStack = createStackNavigator(
   {
     defaultNavigationOptions: ({ navigation }) => {
       return {
-        title: navigation.getParam("user", { name: "No User Found" }).name,
+        title: navigation.getParam("user", { name: "SCB Book" }).name,
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }
@@ -67,7 +74,7 @@ const ToDosStack = createStackNavigator(
   {
     defaultNavigationOptions: ({ navigation }) => {
       return {
-        title: navigation.getParam("user", { name: "No User Found" }).name,
+        title: navigation.getParam("user", { name: "SCB Book" }).name,
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }

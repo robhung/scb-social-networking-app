@@ -8,6 +8,8 @@ import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 import ToDo from "../../components/ToDo";
 
+import Colors from "../../constants/Colors";
+
 const ToDosScreen = ({ onFetch, onToggleCompleted, state }) => (
   <View style={styles.wrapper}>
     {(() => {
@@ -30,6 +32,7 @@ const ToDosScreen = ({ onFetch, onToggleCompleted, state }) => (
               style={styles.toggleCompletedButton}
               title={state.showCompleted ? "Hide Completed" : "Show Completed"}
               onPress={onToggleCompleted}
+              color={Colors.PRIMARY}
             />
           }
           showsVerticalScrollIndicator={false}

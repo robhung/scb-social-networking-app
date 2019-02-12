@@ -14,6 +14,8 @@ import PostCommentsScreen from "../screens/PostCommentsScreen";
 import PostsScreen from "../screens/PostsScreen";
 import ToDosScreen from "../screens/ToDosScreen";
 
+import Colors from "../constants/Colors";
+
 const PostsStack = createStackNavigator(
   {
     Posts: PostsScreen,
@@ -28,6 +30,9 @@ const PostsStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
+        headerTintColor: Colors.PRIMARY,
+        headerBackTitle: null,
+        headerTitleStyle: { color: Colors.BLACK },
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }
@@ -58,6 +63,9 @@ const AlbumsStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
+        headerTintColor: Colors.PRIMARY,
+        headerBackTitle: null,
+        headerTitleStyle: { color: Colors.BLACK },
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }
@@ -82,6 +90,9 @@ const ToDosStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
+        headerTintColor: Colors.PRIMARY,
+        headerBackTitle: null,
+        headerTitleStyle: { color: Colors.BLACK },
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }
@@ -102,10 +113,17 @@ ToDosStack.navigationOptions = {
   )
 };
 
-const MainTabNavigator = createBottomTabNavigator({
-  PostsStack,
-  AlbumsStack,
-  ToDosStack
-});
+const MainTabNavigator = createBottomTabNavigator(
+  {
+    PostsStack,
+    AlbumsStack,
+    ToDosStack
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: Colors.PRIMARY
+    }
+  }
+);
 
 export default MainTabNavigator;

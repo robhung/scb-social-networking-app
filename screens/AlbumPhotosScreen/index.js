@@ -26,6 +26,7 @@ import Colors from "../../constants/Colors";
 const AlbumPhotosScreen = ({
   columns,
   onFetch,
+  onIncrementIndex,
   onPhotoThumb,
   onToggleModal,
   state
@@ -59,6 +60,42 @@ const AlbumPhotosScreen = ({
                 <Icon.Ionicons
                   name={Platform.OS === "ios" ? "ios-close" : "md-close"}
                   size={48}
+                  color={Colors.WHITE}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={
+                  state.index === 0
+                    ? [styles.backIndex, styles.disabled]
+                    : styles.backIndex
+                }
+                onPress={() => onIncrementIndex(-1)}
+                disabled={state.index === 0}
+              >
+                <Icon.Ionicons
+                  name={
+                    Platform.OS === "ios" ? "ios-arrow-back" : "md-arrow-back"
+                  }
+                  size={30}
+                  color={Colors.WHITE}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={
+                  state.index === state.photos.length - 1
+                    ? [styles.forwardIndex, styles.disabled]
+                    : styles.forwardIndex
+                }
+                onPress={() => onIncrementIndex(1)}
+                disabled={state.index === state.photos.length - 1}
+              >
+                <Icon.Ionicons
+                  name={
+                    Platform.OS === "ios"
+                      ? "ios-arrow-forward"
+                      : "md-arrow-forward"
+                  }
+                  size={30}
                   color={Colors.WHITE}
                 />
               </TouchableOpacity>
@@ -114,6 +151,19 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 20,
     left: 20
+  },
+  backIndex: {
+    position: "absolute",
+    top: 28,
+    right: 72
+  },
+  forwardIndex: {
+    position: "absolute",
+    top: 28,
+    right: 32
+  },
+  disabled: {
+    opacity: 0.2
   },
   image: {
     height: wp(100),

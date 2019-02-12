@@ -35,6 +35,8 @@ const handlers = {
         updateState({ ...state, loading: false, error: `${error}` });
       });
   },
+  onIncrementIndex: ({ state, updateState }) => number =>
+    updateState({ ...state, index: state.index + number }),
   onPhotoThumb: ({ state, updateState }) => index =>
     updateState({ ...state, index, showModal: true }),
   onToggleModal: ({ state, updateState }) => () =>

@@ -33,7 +33,7 @@ const handlers = {
         updateState({ ...state, loading: false, error });
       });
   },
-  onPhoto: ({ navigation }) => album => {
+  onPhotoThumb: ({ navigation }) => album => {
     // navigation.navigate("PostComments", { album });
   }
 };

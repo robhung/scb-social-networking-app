@@ -5,9 +5,9 @@ import AlbumPhotosScreenContainer from "../../containers/AlbumPhotosScreenContai
 
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
-import Photo from "../../components/Photo";
+import PhotoThumb from "../../components/PhotoThumb";
 
-const AlbumPhotosScreen = ({ columns, onFetch, onPhoto, state, wp }) => (
+const AlbumPhotosScreen = ({ columns, onFetch, onPhotoThumb, state, wp }) => (
   <View style={styles.wrapper}>
     {(() => {
       if (state.loading) return <Loading flex={1} />;
@@ -33,7 +33,11 @@ const AlbumPhotosScreen = ({ columns, onFetch, onPhoto, state, wp }) => (
           onRefresh={() => onFetch()}
           refreshing={state.loading}
           renderItem={({ item }) => (
-            <Photo columns={columns} photo={item} onPhoto={onPhoto} />
+            <PhotoThumb
+              columns={columns}
+              photo={item}
+              onPhotoThumb={onPhotoThumb}
+            />
           )}
         />
       );
@@ -46,11 +50,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   photosWrapper: {},
-  photosContent: {
-    // flexDirection: "column"
-    // alignItems: "center",
-    // paddingVertical: 12
-  },
+  photosContent: {},
   errorWrapper: {
     flex: 1,
     justifyContent: "center",

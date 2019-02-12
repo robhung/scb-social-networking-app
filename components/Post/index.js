@@ -22,7 +22,11 @@ Post.propTypes = {
   post: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.number, PropTypes.string])
   ).isRequired,
-  onPost: PropTypes.func.isRequired
+  onPost: PropTypes.func
+};
+
+Post.defaultProps = {
+  onPost: undefined
 };
 
 export default Post;

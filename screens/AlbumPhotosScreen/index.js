@@ -14,11 +14,8 @@ const AlbumPhotosScreen = ({ columns, onFetch, onPhotoThumb, state, wp }) => (
       if (state.error)
         return (
           <View style={styles.errorWrapper}>
-            <ErrorMessage
-              textStyle={styles.errorText}
-              text="Unable to retrieve Albums, please refetch."
-            />
-            <Button onPress={onFetch} title="Refetch" color="#000" />
+            <ErrorMessage textStyle={styles.errorText} text={state.error} />
+            <Button onPress={onFetch} title="Refetch" />
           </View>
         );
 

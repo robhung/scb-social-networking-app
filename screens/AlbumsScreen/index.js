@@ -1,24 +1,22 @@
 import React from "react";
 import { Button, FlatList, StyleSheet, View } from "react-native";
+import PropTypes from "prop-types";
 
 import AlbumsScreenContainer from "../../containers/AlbumsScreenContainer";
 
+import Album from "../../components/Album";
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
-import Album from "../../components/Album";
 
-const AlbumsScreen = ({ onFetch, onAlbum, state }) => (
+const AlbumsScreen = ({ columns, onFetch, onAlbum, state }) => (
   <View style={styles.wrapper}>
     {(() => {
       if (state.loading) return <Loading flex={1} />;
       if (state.error)
         return (
           <View style={styles.errorWrapper}>
-            <ErrorMessage
-              textStyle={styles.errorText}
-              text="Unable to retrieve Albums, please refetch."
-            />
-            <Button onPress={onFetch} title="Refetch" color="#000" />
+            <ErrorMessage textStyle={styles.errorText} text={state.error} />
+            <Button onPress={onFetch} title="Refetch" />
           </View>
         );
 
@@ -26,7 +24,7 @@ const AlbumsScreen = ({ onFetch, onAlbum, state }) => (
         <FlatList
           style={styles.albumsWrapper}
           contentContainerStyle={styles.albumsContent}
-          numColumns={2}
+          numColumns={columns}
           data={state.albums}
           showsVerticalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
@@ -57,5 +55,16 @@ const styles = StyleSheet.create({
     fontSize: 18
   }
 });
+
+AlbumsScreen.propTypes = {
+  columns: PropTypes.number.isRequired,
+  onAlbum: PropTypes.func.isRequired,
+  onFetch: PropTypes.func.isRequired,
+  state: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+    albums: PropTypes.array
+  }).isRequired
+};
 
 export default AlbumsScreenContainer(AlbumsScreen);

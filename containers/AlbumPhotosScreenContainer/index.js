@@ -30,7 +30,7 @@ const handlers = {
         });
       })
       .catch(error => {
-        updateState({ ...state, loading: false, error });
+        updateState({ ...state, loading: false, error: `${error}` });
       });
   },
   onPhotoThumb: ({ navigation }) => album => {

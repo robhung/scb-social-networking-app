@@ -1,7 +1,15 @@
-import { compose, lifecycle, withState, withHandlers } from "recompose";
+import {
+  compose,
+  lifecycle,
+  withHandlers,
+  withProps,
+  withState
+} from "recompose";
 import { connect } from "react-redux";
 
 import { userSelected } from "../../data/redux/actions/user";
+
+import { widthPercentageToDP as wp } from "../../utils/responsive";
 
 const initialState = {
   loading: true,
@@ -23,7 +31,7 @@ const handlers = {
         });
       })
       .catch(error => {
-        updateState({ ...state, loading: false, error });
+        updateState({ ...state, loading: false, error: `${error}` });
       });
   },
   onUser: ({ dispatch, navigation }) => user => {
@@ -35,6 +43,9 @@ const handlers = {
 const UsersScreenContainer = compose(
   connect(),
   withState("state", "updateState", initialState),
+  withProps(() => ({
+    columns: Math.round(wp(100) / 164)
+  })),
   withHandlers(handlers),
   lifecycle({
     componentDidMount() {

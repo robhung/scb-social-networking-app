@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, FlatList, StyleSheet, View } from "react-native";
+import PropTypes from "prop-types";
 
 import UsersScreenContainer from "../../containers/UsersScreenContainer";
 
@@ -7,18 +8,15 @@ import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 import User from "../../components/User";
 
-const UsersScreen = ({ onFetch, onUser, state }) => (
+const UsersScreen = ({ columns, onFetch, onUser, state }) => (
   <View style={styles.wrapper}>
     {(() => {
       if (state.loading) return <Loading flex={1} />;
       if (state.error)
         return (
           <View style={styles.errorWrapper}>
-            <ErrorMessage
-              textStyle={styles.errorText}
-              text="Unable to retrieve Users, please refetch."
-            />
-            <Button onPress={onFetch} title="Refetch" color="#000" />
+            <ErrorMessage textStyle={styles.errorText} text={state.error} />
+            <Button onPress={onFetch} title="Refetch" />
           </View>
         );
 
@@ -26,7 +24,7 @@ const UsersScreen = ({ onFetch, onUser, state }) => (
         <FlatList
           style={styles.usersWrapper}
           contentContainerStyle={styles.usersContent}
-          numColumns={2}
+          numColumns={columns}
           data={state.users}
           showsVerticalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
@@ -57,5 +55,16 @@ const styles = StyleSheet.create({
     fontSize: 18
   }
 });
+
+UsersScreen.propTypes = {
+  columns: PropTypes.number.isRequired,
+  onFetch: PropTypes.func.isRequired,
+  onUser: PropTypes.func.isRequired,
+  state: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    users: PropTypes.array
+  }).isRequired
+};
 
 export default UsersScreenContainer(UsersScreen);

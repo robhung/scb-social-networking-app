@@ -4,11 +4,16 @@ import PropTypes from "prop-types";
 
 import { ERROR_TEXT } from "../../constants/Colors";
 
-const ErrorMessage = ({ containerStyle, textStyle, text }) => (
-  <View style={[styles.wrapper, containerStyle]}>
-    <Text style={[styles.text, textStyle]}>{text}</Text>
-  </View>
-);
+const ErrorMessage = ({ containerStyle, textStyle, text }) => {
+  let newText = text;
+  if (newText.includes("TypeError: ")) newText = text.slice(11);
+
+  return (
+    <View style={[styles.wrapper, containerStyle]}>
+      <Text style={[styles.text, textStyle]}>{newText}</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   wrapper: {

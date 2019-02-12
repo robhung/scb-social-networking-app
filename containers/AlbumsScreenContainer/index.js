@@ -1,5 +1,13 @@
-import { compose, lifecycle, withState, withHandlers } from "recompose";
+import {
+  compose,
+  lifecycle,
+  withHandlers,
+  withProps,
+  withState
+} from "recompose";
 import { connect } from "react-redux";
+
+import { widthPercentageToDP as wp } from "../../utils/responsive";
 
 const initialState = {
   loading: true,
@@ -21,7 +29,7 @@ const handlers = {
         });
       })
       .catch(error => {
-        updateState({ ...state, loading: false, error });
+        updateState({ ...state, loading: false, error: `${error}` });
       });
   },
   onAlbum: ({ navigation }) => album => {
@@ -32,6 +40,9 @@ const handlers = {
 const AlbumsScreenContainer = compose(
   connect(({ user }) => ({ user })),
   withState("state", "updateState", initialState),
+  withProps(() => ({
+    columns: Math.round(wp(100) / 164)
+  })),
   withHandlers(handlers),
   lifecycle({
     componentDidMount() {

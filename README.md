@@ -87,7 +87,7 @@ You will need to download the Expo app on [iOS](https://itunes.apple.com/app/app
 
 The project has been published and is hosted on [Expo](https://expo.io/@robhung/scb-social-networking-app). Simply scan the QR code in the link using the Expo app (Android) or the Camera app (iOS).
 
-## Screenshots
+## Screenshots (iOS)
 
 <img src="./assets/images/users@iPhone_8.png" alt="Users" width="33%"/>
 <img src="./assets/images/posts@iPhone_8.png" alt="Posts" width="33%"/>

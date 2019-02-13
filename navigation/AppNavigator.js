@@ -16,7 +16,8 @@ const UsersStack = createStackNavigator({
     screen: UsersScreen,
     navigationOptions: {
       title: "SCB Book",
-      headerTitleStyle: { color: Colors.BLACK }
+      headerStyle: { backgroundColor: Colors.PRIMARY },
+      headerTitleStyle: { color: Colors.WHITE }
     }
   }
 });

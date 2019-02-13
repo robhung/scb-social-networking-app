@@ -8,7 +8,7 @@ const TabBarIcon = ({ focused, name }) => (
     name={name}
     size={26}
     style={{ marginBottom: -3 }}
-    color={focused ? Colors.PRIMARY : Colors.GREY_A100}
+    color={focused ? Colors.SECONDARY : Colors.GREY_A100}
   />
 );
 

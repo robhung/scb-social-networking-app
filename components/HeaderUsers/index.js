@@ -13,7 +13,7 @@ const HeaderUsers = ({ navigation }) => (
     <Icon.Ionicons
       name={Platform.OS === "ios" ? "ios-contact" : "md-contact"}
       size={32}
-      color={Colors.PRIMARY}
+      color={Colors.WHITE}
     />
   </TouchableOpacity>
 );

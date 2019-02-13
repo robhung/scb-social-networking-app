@@ -10,7 +10,7 @@ const User = ({ user, onUser }) => (
     <Icon.Ionicons
       name={Platform.OS === "ios" ? "ios-contact" : "md-contact"}
       size={64}
-      color={Colors.PRIMARY}
+      color={Colors.SECONDARY}
     />
     <Text>{user.name}</Text>
   </TouchableOpacity>

@@ -30,9 +30,10 @@ const PostsStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
-        headerTintColor: Colors.PRIMARY,
+        headerTintColor: Colors.WHITE,
         headerBackTitle: null,
-        headerTitleStyle: { color: Colors.BLACK },
+        headerStyle: { backgroundColor: Colors.PRIMARY },
+        headerTitleStyle: { color: Colors.WHITE },
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }
@@ -63,9 +64,10 @@ const AlbumsStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
-        headerTintColor: Colors.PRIMARY,
+        headerTintColor: Colors.WHITE,
         headerBackTitle: null,
-        headerTitleStyle: { color: Colors.BLACK },
+        headerStyle: { backgroundColor: Colors.PRIMARY },
+        headerTitleStyle: { color: Colors.WHITE },
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }
@@ -90,9 +92,10 @@ const ToDosStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
-        headerTintColor: Colors.PRIMARY,
+        headerTintColor: Colors.WHITE,
         headerBackTitle: null,
-        headerTitleStyle: { color: Colors.BLACK },
+        headerStyle: { backgroundColor: Colors.PRIMARY },
+        headerTitleStyle: { color: Colors.WHITE },
         headerRight: <HeaderUsers navigation={navigation} />
       };
     }

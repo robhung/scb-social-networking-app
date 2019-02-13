@@ -8,13 +8,8 @@ import Colors from "../../constants/Colors";
 
 const ToDo = ({ todo }) => (
   <View style={styles.wrapper}>
-    <View
-      style={
-        todo.completed
-          ? [styles.checkbox, styles.checkboxFull]
-          : styles.checkbox
-      }
-    />
+    <View style={styles.checkbox} />
+    {todo.completed && <View style={styles.checkboxFull} />}
     <BlackText style={styles.text}>{todo.title}</BlackText>
   </View>
 );
@@ -38,8 +33,12 @@ const styles = StyleSheet.create({
     marginRight: 8
   },
   checkboxFull: {
-    padding: 2,
-    backgroundColor: Colors.GREY_A200
+    height: 16.5,
+    width: 16,
+    borderRadius: 8,
+    position: "absolute",
+    left: 22,
+    backgroundColor: Colors.SECONDARY
   },
   text: {
     paddingVertical: 12,

@@ -10,7 +10,7 @@ const Album = ({ album, onAlbum }) => (
     <Icon.Ionicons
       name={Platform.OS === "ios" ? "ios-images" : "md-images"}
       size={64}
-      color={Colors.PRIMARY}
+      color={Colors.SECONDARY}
     />
     <Text>{album.title}</Text>
   </TouchableOpacity>

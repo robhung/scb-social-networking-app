@@ -90,6 +90,7 @@ The project has been published and is hosted on [Expo](https://expo.io/@robhung/
 ## Screenshots (iOS)
 
 <div>
+  <img src="./assets/images/splash@iPhone_8.png" alt="Splash" width="33%"/>
   <img src="./assets/images/users@iPhone_8.png" alt="Users" width="33%"/>
   <img src="./assets/images/posts@iPhone_8.png" alt="Posts" width="33%"/>
   <img src="./assets/images/postComments@iPhone_8.png" alt="PostComments" width="33%"/>

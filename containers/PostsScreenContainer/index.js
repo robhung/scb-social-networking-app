@@ -26,10 +26,8 @@ const handlers = {
         updateState({ ...state, loading: false, error: `${error}` });
       });
   },
-  onPost: ({ dispatch, navigation }) => post => {
-    // dispatch(userSelected(user));
-    navigation.navigate("PostComments", { post });
-  }
+  onPost: ({ navigation }) => post =>
+    navigation.navigate("PostComments", { post })
 };
 
 const PostsScreenContainer = compose(

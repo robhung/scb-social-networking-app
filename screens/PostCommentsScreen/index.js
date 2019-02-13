@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FlatList, StyleSheet, View } from "react-native";
+import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 import PropTypes from "prop-types";
 
 import PostCommentsScreenContainer from "../../containers/PostCommentsScreenContainer";
@@ -7,11 +7,11 @@ import PostCommentsScreenContainer from "../../containers/PostCommentsScreenCont
 import Comment from "../../components/Comment";
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
-import Post from "../../components/Post";
+
+import Colors from "../../constants/Colors";
 
 const PostCommentsScreen = ({ onFetch, post, state }) => (
   <View style={styles.wrapper}>
-    <Post post={post} />
     {(() => {
       if (state.loading) return <Loading flex={1} />;
       if (state.error)
@@ -26,16 +26,16 @@ const PostCommentsScreen = ({ onFetch, post, state }) => (
         );
 
       return (
-        <FlatList
-          style={styles.commentsWrapper}
-          contentContainerStyle={styles.commentsContent}
-          data={state.comments}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={item => `${item.id}`}
-          onRefresh={() => onFetch()}
-          refreshing={state.loading}
-          renderItem={({ item }) => <Comment comment={item} />}
-        />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.postCommentsWrapper}>
+            <Text style={styles.title}>{post.title}</Text>
+            <Text style={styles.body}>{post.body}</Text>
+            <View style={styles.separator} />
+            {state.comments.map((comment, index) => (
+              <Comment key={index} comment={comment} />
+            ))}
+          </View>
+        </ScrollView>
       );
     })()}
   </View>
@@ -44,6 +44,36 @@ const PostCommentsScreen = ({ onFetch, post, state }) => (
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1
+  },
+  postCommentsWrapper: {
+    backgroundColor: Colors.SECONDARY,
+    borderRadius: 5,
+    padding: 12,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 2,
+    shadowOpacity: 0.4,
+    marginTop: 16,
+    marginBottom: 24,
+    marginHorizontal: 18
+  },
+  title: {
+    color: Colors.WHITE,
+    fontWeight: "bold",
+    paddingBottom: 12
+  },
+  body: {
+    color: Colors.WHITE,
+    fontWeight: "400"
+  },
+  separator: {
+    marginTop: 16,
+    marginBottom: 8,
+    borderBottomWidth: 1,
+    borderColor: Colors.GREY_A100
   },
   commentsWrapper: {},
   commentsContent: {

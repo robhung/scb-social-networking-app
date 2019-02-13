@@ -1,25 +1,46 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, View } from "react-native";
+import { Icon } from "expo";
+import { Platform, StyleSheet, Text, View } from "react-native";
 
-import { BlackText } from "../StyledText";
+import Colors from "../../constants/Colors";
 
 const Comment = ({ comment }) => (
   <View style={styles.wrapper}>
-    <BlackText style={styles.text}>{comment.name}</BlackText>
-    <BlackText style={styles.text}>{comment.email}</BlackText>
-    <BlackText style={styles.text}>{comment.body}</BlackText>
+    <View style={styles.emailWrapper}>
+      <Icon.Ionicons
+        name={Platform.OS === "ios" ? "ios-mail" : "md-mail"}
+        size={14}
+        color={Colors.WHITE}
+      />
+      <Text style={styles.email}>{comment.email}</Text>
+    </View>
+    <Text style={styles.name}>{comment.name}</Text>
+    <Text style={styles.body}>{comment.body}</Text>
   </View>
 );
 
 const styles = StyleSheet.create({
   wrapper: {
-    borderWidth: 1,
-    marginVertical: 12,
-    marginHorizontal: 18
+    paddingVertical: 8
   },
-  text: {
-    marginVertical: 4
+  name: {
+    color: Colors.WHITE,
+    fontWeight: "bold",
+    paddingBottom: 12
+  },
+  emailWrapper: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  email: {
+    color: Colors.WHITE,
+    fontWeight: "bold",
+    paddingLeft: 8
+  },
+  body: {
+    color: Colors.WHITE,
+    fontWeight: "400"
   }
 });
 

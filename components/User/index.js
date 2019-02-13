@@ -19,7 +19,8 @@ const User = ({ columns, user, onUser }) => {
     },
     username: {
       fontSize: 15,
-      fontWeight: "bold"
+      fontWeight: "bold",
+      textAlign: "center"
     }
   });
   return (

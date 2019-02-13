@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   usersWrapper: {},
   usersContent: {
     alignItems: "center",
-    paddingTop: 12,
+    paddingTop: 8,
     paddingBottom: 24
   },
   errorWrapper: {

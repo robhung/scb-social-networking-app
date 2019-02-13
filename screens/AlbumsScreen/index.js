@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
   albumsContent: {
     marginLeft: "auto",
     marginRight: "auto",
-    paddingVertical: 12
+    paddingTop: 8,
+    paddingBottom: 16
   },
   errorWrapper: {
     flex: 1,

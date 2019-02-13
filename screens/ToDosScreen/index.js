@@ -28,12 +28,16 @@ const ToDosScreen = ({ onFetch, onToggleCompleted, state }) => (
           contentContainerStyle={styles.postsContent}
           data={state.showCompleted ? state.todos : state.todosIncomplete}
           ListFooterComponent={
-            <Button
-              style={styles.toggleCompletedButton}
-              title={state.showCompleted ? "Hide Completed" : "Show Completed"}
-              onPress={onToggleCompleted}
-              color={Colors.PRIMARY}
-            />
+            <View style={styles.toggleCompletedButton}>
+              <Button
+                style={styles.toggleCompletedButton}
+                title={
+                  state.showCompleted ? "Hide Completed" : "Show Completed"
+                }
+                onPress={onToggleCompleted}
+                color={Colors.PRIMARY}
+              />
+            </View>
           }
           showsVerticalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
@@ -60,7 +64,9 @@ const styles = StyleSheet.create({
   errorText: {
     fontSize: 18
   },
-  toggleCompletedButton: {}
+  toggleCompletedButton: {
+    paddingVertical: 4
+  }
 });
 
 ToDosScreen.propTypes = {

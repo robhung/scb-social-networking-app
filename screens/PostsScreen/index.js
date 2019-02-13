@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
   },
   postsWrapper: {},
   postsContent: {
-    paddingVertical: 12
+    paddingTop: 4,
+    paddingBottom: 8,
   },
   errorWrapper: {
     flex: 1,

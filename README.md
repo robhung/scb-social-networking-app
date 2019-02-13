@@ -89,14 +89,16 @@ The project has been published and is hosted on [Expo](https://expo.io/@robhung/
 
 ## Screenshots (iOS)
 
-<img src="./assets/images/users@iPhone_8.png" alt="Users" width="33%"/>
-<img src="./assets/images/posts@iPhone_8.png" alt="Posts" width="33%"/>
-<img src="./assets/images/postComments@iPhone_8.png" alt="PostComments" width="33%"/>
-<img src="./assets/images/albums@iPhone_8.png" alt="Albums" width="33%"/>
-<img src="./assets/images/albumPhotos@iPhone_8.png" alt="Album Photos" width="33%"/>
-<img src="./assets/images/photo@iPhone_8.png" alt="Photo" width="33%"/>
-<img src="./assets/images/todos@iPhone_8.png" alt="Todos" width="33%"/>
-<img src="./assets/images/todosCompleted@iPhone_8.png" alt="TodosCompleted" width="33%"/>
+<div align="center">
+  <img src="./assets/images/users@iPhone_8.png" alt="Users" width="33%"/>
+  <img src="./assets/images/posts@iPhone_8.png" alt="Posts" width="33%"/>
+  <img src="./assets/images/postComments@iPhone_8.png" alt="PostComments" width="33%"/>
+  <img src="./assets/images/albums@iPhone_8.png" alt="Albums" width="33%"/>
+  <img src="./assets/images/albumPhotos@iPhone_8.png" alt="Album Photos" width="33%"/>
+  <img src="./assets/images/photo@iPhone_8.png" alt="Photo" width="33%"/>
+  <img src="./assets/images/todos@iPhone_8.png" alt="Todos" width="33%"/>
+  <img src="./assets/images/todosCompleted@iPhone_8.png" alt="TodosCompleted" width="33%"/>
+</div>
 
 ## Made using React-Native & Expo CLI
 

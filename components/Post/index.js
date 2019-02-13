@@ -1,22 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import { BlackText } from "../StyledText";
+import Colors from "../../constants/Colors";
 
 const Post = ({ post, onPost }) => (
-  <TouchableOpacity style={styles.wrapper} onPress={() => onPost(post)}>
-    <BlackText>{post.title}</BlackText>
-    <BlackText>{post.body}</BlackText>
+  <TouchableOpacity
+    style={styles.wrapper}
+    onPress={() => onPost(post)}
+    elevation={8}
+  >
+    <Text style={styles.title}>{post.title}</Text>
+    <Text style={styles.body}>{post.body}</Text>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
   wrapper: {
-    borderWidth: 1,
+    backgroundColor: Colors.SECONDARY,
+    borderRadius: 5,
+    padding: 12,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 2,
+    shadowOpacity: 0.4,
     marginVertical: 12,
-    marginHorizontal: 18,
-    alignItems: "center"
+    marginHorizontal: 18
+  },
+  title: {
+    color: Colors.WHITE,
+    fontWeight: "bold",
+    paddingBottom: 12,
+  },
+  body: {
+    color: Colors.WHITE,
+    fontWeight: "400"
   }
 });
 

@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Platform, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Platform, StyleSheet, TouchableOpacity } from "react-native";
 import { Icon } from "expo";
+
+import { BlackText } from "../StyledText";
 
 import Colors from "../../constants/Colors";
 
@@ -12,7 +14,7 @@ const Album = ({ album, onAlbum }) => (
       size={64}
       color={Colors.SECONDARY}
     />
-    <Text>{album.title}</Text>
+    <BlackText>{album.title}</BlackText>
   </TouchableOpacity>
 );
 

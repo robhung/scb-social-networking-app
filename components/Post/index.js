@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
+
+import { BlackText } from "../StyledText";
 
 const Post = ({ post, onPost }) => (
   <TouchableOpacity style={styles.wrapper} onPress={() => onPost(post)}>
-    <Text>{post.title}</Text>
-    <Text>{post.body}</Text>
+    <BlackText>{post.title}</BlackText>
+    <BlackText>{post.body}</BlackText>
   </TouchableOpacity>
 );
 

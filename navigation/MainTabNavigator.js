@@ -124,7 +124,7 @@ const MainTabNavigator = createBottomTabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: Colors.PRIMARY
+      activeTintColor: Colors.SECONDARY
     }
   }
 );

@@ -25,6 +25,10 @@ const Album = ({ album, columns, onAlbum }) => {
       justifyContent: "center",
       height: wp(100) / columns - 36,
       width: wp(100) / columns - 36
+    },
+    title: {
+      fontSize: 15,
+      fontWeight: "500",
     }
   });
   return (
@@ -36,7 +40,7 @@ const Album = ({ album, columns, onAlbum }) => {
           color={Colors.SECONDARY}
         />
       </TouchableOpacity>
-      <BlackText>{album.title}</BlackText>
+      <BlackText style={styles.title}>{album.title}</BlackText>
     </View>
   );
 };

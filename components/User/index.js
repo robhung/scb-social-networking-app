@@ -18,7 +18,8 @@ const User = ({ columns, user, onUser }) => {
       width: 128
     },
     username: {
-      fontSize: 16
+      fontSize: 15,
+      fontWeight: "bold"
     }
   });
   return (

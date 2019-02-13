@@ -1,27 +1,13 @@
 import React from "react";
-import {
-  Button,
-  FlatList,
-  Image,
-  Modal,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View
-} from "react-native";
-import { Icon } from "expo";
+import { Button, FlatList, StyleSheet, View } from "react-native";
 import PropTypes from "prop-types";
 
 import AlbumPhotosScreenContainer from "../../containers/AlbumPhotosScreenContainer";
 
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
+import PhotoModal from "../../components/PhotoModal";
 import PhotoThumb from "../../components/PhotoThumb";
-
-import { widthPercentageToDP as wp } from "../../utils/responsive";
-
-import Colors from "../../constants/Colors";
 
 const AlbumPhotosScreen = ({
   columns,
@@ -44,67 +30,13 @@ const AlbumPhotosScreen = ({
 
       return (
         <React.Fragment>
-          <Modal visible={state.showModal} animationType="fade">
-            <ScrollView
-              bounces={false}
-              contentContainerStyle={styles.modal}
-              minimumZoomScale={1}
-              maximumZoomScale={3}
-              bouncesZoom={false}
-              decelerationRate="normal"
-            >
-              <TouchableOpacity
-                style={styles.closeModal}
-                onPress={() => onToggleModal()}
-              >
-                <Icon.Ionicons
-                  name={Platform.OS === "ios" ? "ios-close" : "md-close"}
-                  size={48}
-                  color={Colors.WHITE}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={
-                  state.index === 0
-                    ? [styles.backIndex, styles.disabled]
-                    : styles.backIndex
-                }
-                onPress={() => onIncrementIndex(-1)}
-                disabled={state.index === 0}
-              >
-                <Icon.Ionicons
-                  name={
-                    Platform.OS === "ios" ? "ios-arrow-back" : "md-arrow-back"
-                  }
-                  size={30}
-                  color={Colors.WHITE}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={
-                  state.index === state.photos.length - 1
-                    ? [styles.forwardIndex, styles.disabled]
-                    : styles.forwardIndex
-                }
-                onPress={() => onIncrementIndex(1)}
-                disabled={state.index === state.photos.length - 1}
-              >
-                <Icon.Ionicons
-                  name={
-                    Platform.OS === "ios"
-                      ? "ios-arrow-forward"
-                      : "md-arrow-forward"
-                  }
-                  size={30}
-                  color={Colors.WHITE}
-                />
-              </TouchableOpacity>
-              <Image
-                style={styles.image}
-                source={{ uri: state.photos[state.index].url }}
-              />
-            </ScrollView>
-          </Modal>
+          <PhotoModal
+            index={state.index}
+            onIncrementIndex={onIncrementIndex}
+            onToggleModal={onToggleModal}
+            photos={state.photos}
+            showModal={state.showModal}
+          />
           <FlatList
             style={styles.photosWrapper}
             contentContainerStyle={styles.photosContent}
@@ -141,44 +73,21 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: 18
-  },
-  modal: {
-    flex: 1,
-    justifyContent: "center",
-    backgroundColor: "#000"
-  },
-  closeModal: {
-    position: "absolute",
-    top: 20,
-    left: 20
-  },
-  backIndex: {
-    position: "absolute",
-    top: 28,
-    right: 72
-  },
-  forwardIndex: {
-    position: "absolute",
-    top: 28,
-    right: 32
-  },
-  disabled: {
-    opacity: 0.2
-  },
-  image: {
-    height: wp(100),
-    width: wp(100)
   }
 });
 
 AlbumPhotosScreen.propTypes = {
   columns: PropTypes.number.isRequired,
   onFetch: PropTypes.func.isRequired,
+  onIncrementIndex: PropTypes.func.isRequired,
   onPhotoThumb: PropTypes.func.isRequired,
+  onToggleModal: PropTypes.func.isRequired,
   state: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-    photos: PropTypes.array
+    index: PropTypes.number,
+    photos: PropTypes.array,
+    showModal: PropTypes.bool
   }).isRequired
 };
 

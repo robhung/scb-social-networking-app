@@ -7,10 +7,20 @@ import { BlackText } from "../StyledText";
 import Colors from "../../constants/Colors";
 
 const ToDo = ({ todo }) => (
-  <View style={styles.wrapper}>
+  <View
+    style={
+      todo.completed
+        ? [styles.wrapper, styles.wrapperCompleted]
+        : styles.wrapper
+    }
+  >
     <View style={styles.checkbox} />
     {todo.completed && <View style={styles.checkboxFull} />}
-    <BlackText style={styles.text}>{todo.title}</BlackText>
+    <BlackText
+      style={todo.completed ? [styles.text, styles.textCompleted] : styles.text}
+    >
+      {todo.title}
+    </BlackText>
   </View>
 );
 
@@ -24,25 +34,35 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     alignItems: "center"
   },
+  wrapperCompleted: {
+    opacity: 0.7
+  },
   checkbox: {
     height: 24,
     width: 24,
     borderWidth: 1,
     borderRadius: 12,
-    borderColor: Colors.BLACK,
-    marginRight: 8
+    position: "absolute",
+    left: 18,
+    top: 12,
+    borderColor: Colors.BLACK
   },
   checkboxFull: {
-    height: 16.5,
+    height: 16,
     width: 16,
     borderRadius: 8,
     position: "absolute",
     left: 22,
+    top: 16,
     backgroundColor: Colors.SECONDARY
   },
   text: {
+    marginLeft: 32,
     paddingVertical: 12,
     paddingRight: 8
+  },
+  textCompleted: {
+    color: Colors.SECONDARY
   }
 });
 

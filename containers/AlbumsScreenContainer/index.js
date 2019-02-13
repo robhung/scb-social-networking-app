@@ -43,7 +43,7 @@ const AlbumsScreenContainer = compose(
   connect(({ user }) => ({ user })),
   withState("state", "updateState", initialState),
   withProps(() => ({
-    columns: Math.round(wp(100) / 172)
+    columns: Math.round(wp(100) / 188)
   })),
   withHandlers(handlers),
   lifecycle({

@@ -30,7 +30,9 @@ const AlbumsScreen = ({ columns, onFetch, onAlbum, state }) => (
           keyExtractor={item => `${item.id}`}
           onRefresh={() => onFetch()}
           refreshing={state.loading}
-          renderItem={({ item }) => <Album album={item} onAlbum={onAlbum} />}
+          renderItem={({ item }) => (
+            <Album album={item} columns={columns} onAlbum={onAlbum} />
+          )}
         />
       );
     })()}
@@ -43,7 +45,8 @@ const styles = StyleSheet.create({
   },
   albumsWrapper: {},
   albumsContent: {
-    alignItems: "center",
+    marginLeft: "auto",
+    marginRight: "auto",
     paddingVertical: 12
   },
   errorWrapper: {

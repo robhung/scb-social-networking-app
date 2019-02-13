@@ -30,7 +30,9 @@ const UsersScreen = ({ columns, onFetch, onUser, state }) => (
           keyExtractor={item => `${item.id}`}
           onRefresh={() => onFetch()}
           refreshing={state.loading}
-          renderItem={({ item }) => <User user={item} onUser={onUser} />}
+          renderItem={({ item }) => (
+            <User columns={columns} user={item} onUser={onUser} />
+          )}
         />
       );
     })()}

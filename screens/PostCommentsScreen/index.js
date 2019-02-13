@@ -17,10 +17,7 @@ const PostCommentsScreen = ({ onFetch, post, state }) => (
       if (state.error)
         return (
           <View style={styles.errorWrapper}>
-            <ErrorMessage
-              textStyle={styles.errorText}
-              text="Unable to retrieve Comments, please refetch."
-            />
+            <ErrorMessage text={state.error} />
             <Button onPress={onFetch} title="Refetch" color="#000" />
           </View>
         );
@@ -73,7 +70,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginBottom: 8,
     borderBottomWidth: 1,
-    borderColor: Colors.GREY_A100
+    borderColor: Colors.WHITE
   },
   commentsWrapper: {},
   commentsContent: {
@@ -83,9 +80,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
-  },
-  errorText: {
-    fontSize: 18
   }
 });
 

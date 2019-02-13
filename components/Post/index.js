@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 2,
     shadowOpacity: 0.4,
-    marginVertical: 12,
+    marginVertical: 9,
     marginHorizontal: 18
   },
   title: {

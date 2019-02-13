@@ -8,6 +8,8 @@ import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 import User from "../../components/User";
 
+import Colors from "../../constants/Colors";
+
 const UsersScreen = ({ columns, onFetch, onUser, state }) => (
   <View style={styles.wrapper}>
     {(() => {
@@ -15,8 +17,12 @@ const UsersScreen = ({ columns, onFetch, onUser, state }) => (
       if (state.error)
         return (
           <View style={styles.errorWrapper}>
-            <ErrorMessage textStyle={styles.errorText} text={state.error} />
-            <Button onPress={onFetch} title="Refetch" />
+            <ErrorMessage text={state.error} />
+            <Button
+              onPress={onFetch}
+              title="Refetch"
+              color={Colors.SECONDARY}
+            />
           </View>
         );
 
@@ -53,9 +59,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
-  },
-  errorText: {
-    fontSize: 18
   }
 });
 

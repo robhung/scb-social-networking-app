@@ -15,7 +15,7 @@ const PostsScreen = ({ onFetch, onPost, state }) => (
       if (state.error)
         return (
           <View style={styles.errorWrapper}>
-            <ErrorMessage textStyle={styles.errorText} text={state.error} />
+            <ErrorMessage text={state.error} />
             <Button onPress={onFetch} title="Refetch" />
           </View>
         );
@@ -42,16 +42,13 @@ const styles = StyleSheet.create({
   },
   postsWrapper: {},
   postsContent: {
-    paddingTop: 4,
-    paddingBottom: 8,
+    paddingTop: 8,
+    paddingBottom: 12
   },
   errorWrapper: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
-  },
-  errorText: {
-    fontSize: 18
   }
 });
 

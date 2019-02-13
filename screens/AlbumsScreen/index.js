@@ -15,7 +15,7 @@ const AlbumsScreen = ({ columns, onFetch, onAlbum, state }) => (
       if (state.error)
         return (
           <View style={styles.errorWrapper}>
-            <ErrorMessage textStyle={styles.errorText} text={state.error} />
+            <ErrorMessage text={state.error} />
             <Button onPress={onFetch} title="Refetch" />
           </View>
         );
@@ -54,9 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
-  },
-  errorText: {
-    fontSize: 18
   }
 });
 

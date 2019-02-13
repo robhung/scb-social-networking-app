@@ -19,7 +19,7 @@ const Album = ({ album, columns, onAlbum }) => {
     },
     touchable: {
       borderRadius: 5,
-      opacity: 0.4,
+      opacity: 0.6,
       backgroundColor: Colors.GREY_A100,
       alignItems: "center",
       justifyContent: "center",

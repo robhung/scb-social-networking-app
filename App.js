@@ -8,6 +8,8 @@ import { store } from "./data/redux/store";
 
 import AppNavigator from "./navigation/AppNavigator";
 
+import Colors from "./constants/Colors";
+
 const App = ({
   isLoadingComplete,
   onLoadResourcesAsync,
@@ -39,7 +41,7 @@ const App = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: Colors.WHITE
   }
 });
 

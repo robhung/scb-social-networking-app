@@ -11,16 +11,23 @@ import MainTabNavigator from "./MainTabNavigator";
 
 import Colors from "../constants/Colors";
 
-const UsersStack = createStackNavigator({
-  Users: {
-    screen: UsersScreen,
-    navigationOptions: {
-      title: "SCB Book",
-      headerStyle: { backgroundColor: Colors.PRIMARY },
-      headerTitleStyle: { color: Colors.WHITE }
+const UsersStack = createStackNavigator(
+  {
+    Users: {
+      screen: UsersScreen,
+      navigationOptions: {
+        title: "SCB Book",
+        headerStyle: { backgroundColor: Colors.PRIMARY },
+        headerTitleStyle: { color: Colors.WHITE }
+      }
+    }
+  },
+  {
+    cardStyle: {
+      backgroundColor: Colors.WHITE
     }
   }
-});
+);
 
 const AppNavigator = createAppContainer(
   createSwitchNavigator({

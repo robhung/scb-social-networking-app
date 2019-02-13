@@ -24,7 +24,7 @@ export default {
   PRIMARY: "#2B6A9D",
   PRIMARY_LIGHT: "#98B4CF",
   SECONDARY: "#4F9435",
-  SECONDARY_LIGHT: "#B8D0A5",
+  SECONDARY_LIGHT: "#ADCEA4",
   SECONDARY_BLACK: "gray",
   MINOR_BLACK: "lightgray",
   TAB_ICON_DEFAULT: "#ccc",
@@ -33,5 +33,5 @@ export default {
   TINT_COLOR: tintColor,
   WARNING_BACKGROUND: "#EAEB5E",
   WARNING_TEXT: "#666804",
-  WHITE: "white"
+  WHITE: "#F8F8FF"
 };

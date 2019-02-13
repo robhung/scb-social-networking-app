@@ -27,6 +27,9 @@ const PostsStack = createStackNavigator(
     }
   },
   {
+    cardStyle: {
+      backgroundColor: Colors.WHITE
+    },
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
@@ -61,6 +64,9 @@ const AlbumsStack = createStackNavigator(
     }
   },
   {
+    cardStyle: {
+      backgroundColor: Colors.WHITE
+    },
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
@@ -89,6 +95,9 @@ const ToDosStack = createStackNavigator(
     ToDos: ToDosScreen
   },
   {
+    cardStyle: {
+      backgroundColor: Colors.WHITE
+    },
     defaultNavigationOptions: ({ navigation }) => {
       return {
         title: navigation.getParam("user", { name: "SCB Book" }).name,
@@ -124,7 +133,10 @@ const MainTabNavigator = createBottomTabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: Colors.SECONDARY
+      activeTintColor: Colors.SECONDARY,
+      style: {
+        backgroundColor: Colors.WHITE
+      }
     }
   }
 );

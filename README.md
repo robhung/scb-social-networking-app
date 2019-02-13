@@ -1,6 +1,6 @@
 # SCB Book - Social Network App
 
-You can choose to run the app via Local Machine or hosted by Expo.
+You can choose to run the app via Local Machine or Expo Hosted (Published).
 
 ## Run Development or Production via Local Machine
 
@@ -36,11 +36,11 @@ Tests can be run with:
 npm test
 ```
 
-## Run Production via Expo
+## Run Production via Expo Hosted (Published)
 
 You will need to download the Expo app on [iOS](https://itunes.apple.com/app/apple-store/id982107779) or [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www).
 
-The project has been published and hosted on [Expo](https://expo.io/@robhung/scb-social-networking-app). Simply scan the QR code in the link using the Expo app (Android) or the Camera app (iOS).
+The project has been published and is hosted on [Expo](https://expo.io/@robhung/scb-social-networking-app). Simply scan the QR code in the link using the Expo app (Android) or the Camera app (iOS).
 
 ## Made using React-Native & Expo CLI
 

@@ -28,7 +28,7 @@ const Album = ({ album, columns, onAlbum }) => {
     },
     title: {
       fontSize: 15,
-      fontWeight: "500",
+      fontWeight: "500"
     }
   });
   return (
@@ -40,7 +40,9 @@ const Album = ({ album, columns, onAlbum }) => {
           color={Colors.SECONDARY}
         />
       </TouchableOpacity>
-      <BlackText style={styles.title}>{album.title}</BlackText>
+      <BlackText style={styles.title} numberOfLines={3}>
+        {album.title}
+      </BlackText>
     </View>
   );
 };

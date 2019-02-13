@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   email: {
     color: Colors.WHITE,
     fontWeight: "bold",
-    paddingLeft: 8
+    paddingLeft: 4
   },
   body: {
     color: Colors.WHITE,

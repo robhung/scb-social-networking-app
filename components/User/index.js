@@ -6,7 +6,7 @@ import { Icon } from "expo";
 import { BlackText } from "../StyledText";
 import Colors from "../../constants/Colors";
 
-import { widthPercentageToDP as wp } from "../../utils/responsive";
+import { widthPercentageToDP as wp } from "../../constants/Layout";
 
 const User = ({ columns, user, onUser }) => {
   const styles = StyleSheet.create({

@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import { API_URL } from "../../data";
 import { userSelected } from "../../data/redux/actions/user";
 
-import { widthPercentageToDP as wp } from "../../utils/responsive";
+import { widthPercentageToDP as wp } from "../../constants/Layout";
 
 const initialState = {
   loading: true,

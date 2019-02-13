@@ -13,8 +13,7 @@ import {
 import { Icon } from "expo";
 import PropTypes from "prop-types";
 
-import { widthPercentageToDP as wp } from "../../utils/responsive";
-
+import { widthPercentageToDP as wp } from "../../constants/Layout";
 import Colors from "../../constants/Colors";
 
 const PhotoModal = ({

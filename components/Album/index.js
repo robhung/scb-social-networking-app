@@ -5,8 +5,7 @@ import { Icon } from "expo";
 
 import { BlackText } from "../StyledText";
 
-import { widthPercentageToDP as wp } from "../../utils/responsive";
-
+import { widthPercentageToDP as wp } from "../../constants/Layout";
 import Colors from "../../constants/Colors";
 
 const Album = ({ album, columns, onAlbum }) => {

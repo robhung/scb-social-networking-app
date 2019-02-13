@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 
 import { API_URL } from "../../data";
 
-import { widthPercentageToDP as wp } from "../../utils/responsive";
+import { widthPercentageToDP as wp } from "../../constants/Layout";
 
 const initialState = {
   loading: true,

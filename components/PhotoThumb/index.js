@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import { widthPercentageToDP as wp } from "../../utils/responsive";
+import { widthPercentageToDP as wp } from "../../constants/Layout";
 
 const PhotoThumb = ({ columns, photo, onPhotoThumb }) => {
   const styles = StyleSheet.create({

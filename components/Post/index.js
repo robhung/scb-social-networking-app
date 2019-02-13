@@ -5,11 +5,7 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import Colors from "../../constants/Colors";
 
 const Post = ({ post, onPost }) => (
-  <TouchableOpacity
-    style={styles.wrapper}
-    onPress={() => onPost(post)}
-    elevation={8}
-  >
+  <TouchableOpacity style={styles.wrapper} onPress={() => onPost(post)}>
     <Text style={styles.title}>{post.title}</Text>
     <Text style={styles.body}>{post.body}</Text>
   </TouchableOpacity>
@@ -33,7 +29,7 @@ const styles = StyleSheet.create({
   title: {
     color: Colors.WHITE,
     fontWeight: "bold",
-    paddingBottom: 12,
+    paddingBottom: 12
   },
   body: {
     color: Colors.WHITE,

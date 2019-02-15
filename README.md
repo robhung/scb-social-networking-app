@@ -87,7 +87,7 @@ You will need to download the Expo app on [iOS](https://itunes.apple.com/app/app
 
 The project has been published and is hosted on [Expo](https://expo.io/@robhung/scb-social-networking-app). Simply scan the QR code in the link using the Expo app (Android) or the Camera app (iOS).
 
-## Screenshots (iOS)
+## Screenshots (iOS 12)
 
 <div>
   <img src="./assets/images/splash@iPhone_8.png" alt="Splash" width="33%"/>
@@ -99,6 +99,20 @@ The project has been published and is hosted on [Expo](https://expo.io/@robhung/
   <img src="./assets/images/photo@iPhone_8.png" alt="Photo" width="33%"/>
   <img src="./assets/images/todos@iPhone_8.png" alt="Todos" width="33%"/>
   <img src="./assets/images/todosCompleted@iPhone_8.png" alt="TodosCompleted" width="33%"/>
+</div>
+
+## Screenshots (Android 9)
+
+<div>
+  <img src="./assets/images/splash@Pixel_2.png" alt="Splash" width="33%"/>
+  <img src="./assets/images/users@Pixel_2.png" alt="Users" width="33%"/>
+  <img src="./assets/images/posts@Pixel_2.png" alt="Posts" width="33%"/>
+  <img src="./assets/images/postComments@Pixel_2.png" alt="PostComments" width="33%"/>
+  <img src="./assets/images/albums@Pixel_2.png" alt="Albums" width="33%"/>
+  <img src="./assets/images/albumPhotos@Pixel_2.png" alt="Album Photos" width="33%"/>
+  <img src="./assets/images/photo@Pixel_2.png" alt="Photo" width="33%"/>
+  <img src="./assets/images/todos@Pixel_2.png" alt="Todos" width="33%"/>
+  <img src="./assets/images/todosCompleted@Pixel_2.png" alt="TodosCompleted" width="33%"/>
 </div>
 
 ## Made using React-Native & Expo CLI

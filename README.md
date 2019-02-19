@@ -90,29 +90,29 @@ The project has been published and is hosted on [Expo](https://expo.io/@robhung/
 ## Screenshots (iOS 12)
 
 <div>
-  <img src="./assets/images/splash@iPhone_8.png" alt="Splash" width="33%"/>
-  <img src="./assets/images/users@iPhone_8.png" alt="Users" width="33%"/>
-  <img src="./assets/images/posts@iPhone_8.png" alt="Posts" width="33%"/>
-  <img src="./assets/images/postComments@iPhone_8.png" alt="PostComments" width="33%"/>
-  <img src="./assets/images/albums@iPhone_8.png" alt="Albums" width="33%"/>
-  <img src="./assets/images/albumPhotos@iPhone_8.png" alt="Album Photos" width="33%"/>
-  <img src="./assets/images/photo@iPhone_8.png" alt="Photo" width="33%"/>
-  <img src="./assets/images/todos@iPhone_8.png" alt="Todos" width="33%"/>
-  <img src="./assets/images/todosCompleted@iPhone_8.png" alt="TodosCompleted" width="33%"/>
+  <img src="./assets/images/splash@iPhone_8.png" alt="Splash" width="30%"/>
+  <img src="./assets/images/users@iPhone_8.png" alt="Users" width="30%"/>
+  <img src="./assets/images/posts@iPhone_8.png" alt="Posts" width="30%"/>
+  <img src="./assets/images/postComments@iPhone_8.png" alt="PostComments" width="30%"/>
+  <img src="./assets/images/albums@iPhone_8.png" alt="Albums" width="30%"/>
+  <img src="./assets/images/albumPhotos@iPhone_8.png" alt="Album Photos" width="30%"/>
+  <img src="./assets/images/photo@iPhone_8.png" alt="Photo" width="30%"/>
+  <img src="./assets/images/todos@iPhone_8.png" alt="Todos" width="30%"/>
+  <img src="./assets/images/todosCompleted@iPhone_8.png" alt="TodosCompleted" width="30%"/>
 </div>
 
 ## Screenshots (Android 9)
 
 <div>
-  <img src="./assets/images/splash@Pixel_2.png" alt="Splash" width="33%"/>
-  <img src="./assets/images/users@Pixel_2.png" alt="Users" width="33%"/>
-  <img src="./assets/images/posts@Pixel_2.png" alt="Posts" width="33%"/>
-  <img src="./assets/images/postComments@Pixel_2.png" alt="PostComments" width="33%"/>
-  <img src="./assets/images/albums@Pixel_2.png" alt="Albums" width="33%"/>
-  <img src="./assets/images/albumPhotos@Pixel_2.png" alt="Album Photos" width="33%"/>
-  <img src="./assets/images/photo@Pixel_2.png" alt="Photo" width="33%"/>
-  <img src="./assets/images/todos@Pixel_2.png" alt="Todos" width="33%"/>
-  <img src="./assets/images/todosCompleted@Pixel_2.png" alt="TodosCompleted" width="33%"/>
+  <img src="./assets/images/splash@Pixel_2.png" alt="Splash" width="30%"/>
+  <img src="./assets/images/users@Pixel_2.png" alt="Users" width="30%"/>
+  <img src="./assets/images/posts@Pixel_2.png" alt="Posts" width="30%"/>
+  <img src="./assets/images/postComments@Pixel_2.png" alt="PostComments" width="30%"/>
+  <img src="./assets/images/albums@Pixel_2.png" alt="Albums" width="30%"/>
+  <img src="./assets/images/albumPhotos@Pixel_2.png" alt="Album Photos" width="30%"/>
+  <img src="./assets/images/photo@Pixel_2.png" alt="Photo" width="30%"/>
+  <img src="./assets/images/todos@Pixel_2.png" alt="Todos" width="30%"/>
+  <img src="./assets/images/todosCompleted@Pixel_2.png" alt="TodosCompleted" width="30%"/>
 </div>
 
 ## Made using React-Native & Expo CLI

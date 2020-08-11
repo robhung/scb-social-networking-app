@@ -25,9 +25,9 @@
     "minimist": "^1.2.3"
   },
   "devDependencies": {
-    "minimist": ">=1.2.3",
     "babel-preset-expo": "^5.0.0",
-    "jest-expo": "^32.0.0"
+    "jest-expo": "^38.0.2",
+    "minimist": ">=1.2.3"
   },
   "private": true
 }

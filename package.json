@@ -27,7 +27,7 @@
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
     "jest-expo": "^38.0.2",
-    "minimist": ">=1.2.3"
+    "minimist": ">=1.2.6"
   },
   "private": true
 }
